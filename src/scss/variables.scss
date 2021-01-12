@@ -1,0 +1,72 @@
+$movieCardTextColor: rgb(110, 118, 125);
+$darkNominationListBg: rgb(21, 24, 28);
+$lightNominationListBg: rgb(247, 249, 250);
+$darkSearchHolder: rgb(16, 12, 12);
+$lightSearchHolder: rgb(243, 243,243);
+$btn: rgb(47,31,107);
+$background: #ffffff;
+$darkBg: rgb(0,0,0);
+$headerBg: #dde2e9;
+$searchPlaceHolder: #8b95a5;
+$primaryText:#253858;
+$searchText: #6f7d93;
+$loaderBg: #a707bf;
+// $loaderMask: #3c0246;
+// $loaderMask2: #29012f;
+$loaderMask:  rgb(61,18,68) ;
+$loaderMask2: rgb(131,9,152);
+$loaderMask3:rgb(92,6,107);
+//linear-gradient(to right, rgb(61 18 68) 10%, rgb(131 9 152) 20%, rgb(92 6 107) 30%)
+$searchShadow: #d4dbe3;
+$screen-xxsm-max: 375px;
+$screen-xsm-max: 475px;
+$screen-sm-max: 575px;
+$screen-md-max: 767px;
+$screen-lg-max: 991px;
+$screen-xl-max: 1199px;
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+@mixin xxsm-max {
+    @media (max-width: #{$screen-xxsm-max}) {
+        @content;
+    }
+}
+
+@mixin xsm-max {
+    @media (max-width: #{$screen-xsm-max}) {
+        @content;
+    }
+}
+
+@mixin sm-max {
+    @media (max-width: #{$screen-sm-max}) {
+        @content;
+    }
+}
+
+@mixin md-max {
+    @media(max-width: #{$screen-md-max}) {
+        @content;
+    }
+}
+
+@mixin sm-min {
+    @media(min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+@mixin md-min {
+    @media(min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+@mixin lg-min {
+    @media(min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}

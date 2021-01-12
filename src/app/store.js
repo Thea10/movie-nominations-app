@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import nominationReducer from '../features/components/Nominations/NominationSlice';
+import searchReducer from '../features/components/Search/SearchSlice'
+
+
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    nomination: nominationReducer,
+    search: searchReducer
   },
 });
