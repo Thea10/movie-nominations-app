@@ -5,7 +5,7 @@ import { API_KEY } from "../../services/keys";
 export const fetchMovies = createAsyncThunk(
   "search/searchMovies",
   async (text) => {
-    let url = "http://www.omdbapi.com/";
+    let url = "https://www.omdbapi.com/";
     const response = await axios.get(
       `${url}?s=${text}&apikey=${API_KEY}&page=1`
     );
