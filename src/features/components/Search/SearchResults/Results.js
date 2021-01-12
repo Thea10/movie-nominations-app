@@ -9,13 +9,12 @@ import {
 import {
   makeStyles,
   Typography,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
+  // Accordion,
+  // AccordionSummary,
+  // AccordionDetails,
 } from "@material-ui/core";
 import { ThemeContext } from "../../../Theme/ThemeProvider";
 import NominationButton from "../../Nominations/List/NominationButton";
-import { ExpandMoreOutlined } from "@material-ui/icons";
 import PosterImage from "./PosterImage";
 
 export const accordionStyle = makeStyles(() => ({
@@ -51,7 +50,8 @@ const Results = ({ movies }) => {
   return (
     <div>
       {movies.map((movie, i) => {
-        let { Title, Year, Genre, Language, Awards, Plot, Poster } = movie;
+        let { Title, Year, Poster } = movie;
+       // let { Title, Year, Genre, Language, Awards, Plot, Poster } = movie;
         let nominated;
         let item = _.find(movieItems, (item) => item.Title === movie.Title);
         if (item) {
