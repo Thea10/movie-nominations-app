@@ -32,7 +32,7 @@ export const SearchSlice = createSlice({
       state.searchText = payload;
     },
     setDefaultStatus: (state, {payload}) => {
-      let {status, list, text} = payload;
+      let {status, text} = payload;
       state.status = status;
       state.searchText = text;
     },
