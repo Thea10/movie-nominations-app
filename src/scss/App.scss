@@ -24,7 +24,7 @@
 
   .loader-parent {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     .loader {
@@ -98,6 +98,9 @@
   color: rgb(110, 118, 125);
 }
 
+.font-bold{
+  font-weight: 600 !important;
+}
 @media (prefers-reduced-motion: no-preference) {
   .list {
     animation: App-logo-float infinite 5s ease-in-out;

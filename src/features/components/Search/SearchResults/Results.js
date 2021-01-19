@@ -66,8 +66,8 @@ const Results = ({ movies }) => {
             >
               <PosterImage img={Poster} />
 
-              <Typography variant="caption"> Title: {Title} </Typography>
-              <Typography variant="caption"> Year: {Year} </Typography>
+              <Typography variant="caption" className="font-bold"> Title: {Title} </Typography>
+              <Typography variant="caption" className="font-bold"> Year: {Year} </Typography>
               {/* <Typography variant="caption">Genre: {Genre}</Typography>
               <Typography variant="caption">Language: {Language}</Typography>
               <Typography variant="caption">Awards: {Awards}</Typography> */}
@@ -94,7 +94,7 @@ const Results = ({ movies }) => {
           </div>
         );
       })}
-      <Typography variant="caption"> End of Results.</Typography>
+      <Typography variant="caption" className="font-bold"> End of Results.</Typography>
     </div>
   );
 };

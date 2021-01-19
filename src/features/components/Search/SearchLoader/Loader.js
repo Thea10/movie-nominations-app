@@ -17,7 +17,7 @@ const Loader = () => {
               <div className="mask circle">
 
               </div>
-              {[1, 2, 3, 4].map((num) => {
+              {[1, 2, 3].map((num) => {
                 return <div className="mask" key={num}></div>;
               })}
             </div>

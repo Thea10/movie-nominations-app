@@ -44,6 +44,15 @@ const SearchBar = () => {
   const [feedbackText, setfeedbackText] = useState(null);
   const dispatch = useDispatch();
 
+  const checkInput = () => {
+    setfeedbackText(
+      "To get accurate results, your search term should be three or more characters"
+    );
+    dispatch(setDefaultStatus({ status: "none" }));
+    setTimeout(() => {
+      setfeedbackText(null);
+    }, 4000);
+  };
   const setDefault = () => {
     setfeedbackText("Enter a search term to search for movies");
     dispatch(setDefaultStatus({ status: "none" }));
@@ -55,6 +64,9 @@ const SearchBar = () => {
     if (event.target.value === "") {
       setDefault();
       return;
+    } else if (event.target.value.length < 3) {
+      checkInput();
+      return;
     }
     dispatch(setSearchText(event.target.value));
     searchMovies(event.target.value);
@@ -64,7 +76,7 @@ const SearchBar = () => {
     if (searchText === "") {
       setDefault();
       return;
-    }
+    }  
     searchMovies(searchText);
   };
 
@@ -74,6 +86,11 @@ const SearchBar = () => {
 
   return (
     <div className={searchBarClass.root}>
+      {feedbackText ? (
+        <Typography style={{ color: bodyTheme.togglerColor }} variant="caption">
+          {feedbackText}
+        </Typography>
+      ) : null}
       <Paper
         className={searchBarClass.paper}
         style={{ background: bodyTheme.formBg }}
@@ -88,16 +105,11 @@ const SearchBar = () => {
           aria-label="search"
           className={searchBarClass.button}
           onClick={handleBtnClick}
+          disabled={searchText.length < 3}
         >
           <SearchIcon />
         </Button>
       </Paper>
-
-      {feedbackText ? (
-        <Typography style={{ color: bodyTheme.togglerColor }} variant="caption">
-          {feedbackText}
-        </Typography>
-      ) : null}
     </div>
   );
 };

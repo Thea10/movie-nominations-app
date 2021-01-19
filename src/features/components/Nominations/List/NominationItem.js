@@ -20,10 +20,10 @@ const Item = ({ movie, action }) => {
         expandIcon={<ExpandMoreOutlined />}
         aria-controls="nomination-item"
       >
-        <Typography variant="caption">{Title}</Typography>
+        <Typography variant="caption" className="font-bold">{Title}</Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography variant="caption">
+        <Typography variant="caption" className="font-bold">
           <PosterImage img={Poster} />
           {Plot}
         </Typography>

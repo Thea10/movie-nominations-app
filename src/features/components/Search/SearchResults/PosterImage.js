@@ -12,6 +12,10 @@ import { CloseOutlined } from "@material-ui/icons";
 
 const imageDialogStyle = makeStyles(() => ({
   root: {
+
+    "& .MuiIconButton-root":{
+      padding: 0
+    },
     " & .MuiAvatar-root": {
       width: "200px",
       height: "200px",

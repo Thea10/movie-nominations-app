@@ -54,27 +54,6 @@ const SearchHolder = () => {
   }
 
   return <div> {searchHolderContent}</div>;
-
-  // return (
-  //   <div className="loader-holder" style={{ background: bodyTheme.holderBg }}>
-  //     {status === "unset" ? (
-  //       <Typography variant="subtitle1">
-  //         Search results will appear here
-  //       </Typography>
-  //     ) : status === "loading" ? (
-  //       <Typography variant="subtitle1">
-  //         Searching for "{searchText}"
-  //       </Typography>
-  //     ) : (
-  //       <Typography variant="subtitle1">
-  //         Search results for "{searchText}"
-  //       </Typography>
-  //     )}
-  //     {/* <Typography variant="subtitle1"> Searching for "Ram" </Typography> */}
-  //     {/* <Loader /> */}
-  //     <Results />
-  //   </div>
-  // );
 };
 
 export default SearchHolder;
