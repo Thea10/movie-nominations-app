@@ -20,7 +20,7 @@ export const SearchSlice = createSlice({
   name: "search",
   initialState: {
     movieList: [],
-    searchText: "",
+    searchText: null,
     status: "none",
     error: null,
   },
@@ -32,7 +32,9 @@ export const SearchSlice = createSlice({
       state.searchText = payload;
     },
     setDefaultStatus: (state, {payload}) => {
-      state.status = payload.status;
+      let {status, list, text} = payload;
+      state.status = status;
+      state.searchText = text;
     },
   },
   extraReducers: {

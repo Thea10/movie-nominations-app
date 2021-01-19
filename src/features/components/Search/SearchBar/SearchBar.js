@@ -44,18 +44,18 @@ const SearchBar = () => {
   const [feedbackText, setfeedbackText] = useState(null);
   const dispatch = useDispatch();
 
-  const checkInput = () => {
+  const checkInput = (input) => {
     setfeedbackText(
       "To get accurate results, your search term should be three or more characters"
     );
-    dispatch(setDefaultStatus({ status: "none" }));
+    dispatch(setDefaultStatus({ status: "none", text: input }));
     setTimeout(() => {
       setfeedbackText(null);
     }, 4000);
   };
   const setDefault = () => {
     setfeedbackText("Enter a search term to search for movies");
-    dispatch(setDefaultStatus({ status: "none" }));
+    dispatch(setDefaultStatus({ status: "none", text: null }));
     setTimeout(() => {
       setfeedbackText(null);
     }, 4000);
@@ -65,7 +65,7 @@ const SearchBar = () => {
       setDefault();
       return;
     } else if (event.target.value.length < 3) {
-      checkInput();
+      checkInput(event.target.value);
       return;
     }
     dispatch(setSearchText(event.target.value));
@@ -73,10 +73,13 @@ const SearchBar = () => {
   };
 
   const handleBtnClick = () => {
-    if (searchText === "") {
+    if (searchText === "" || searchText === null) {
       setDefault();
       return;
-    }  
+    } else if (searchText !== null && searchText.length < 3) {
+      checkInput(searchText);
+      return;
+    }
     searchMovies(searchText);
   };
 
@@ -105,7 +108,7 @@ const SearchBar = () => {
           aria-label="search"
           className={searchBarClass.button}
           onClick={handleBtnClick}
-          disabled={searchText.length < 3}
+          disabled={searchText === null}
         >
           <SearchIcon />
         </Button>

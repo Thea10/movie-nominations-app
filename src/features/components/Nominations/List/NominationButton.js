@@ -8,6 +8,7 @@ const BtnStyle = makeStyles(() => ({
   root: {
     border: "1px solid rgb(131,9,152)",
     color: "rgb(131,9,152)",
+    margin: "1rem",
 
     "&:hover": {
       background: "rgb(131,9,152)",
